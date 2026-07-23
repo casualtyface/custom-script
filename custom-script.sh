@@ -19,8 +19,8 @@ deb_pkg=(
 
 install_packages() {
     if command -v apt >/dev/null 2>&1; then
-        apt update
-        apt install -y "${pkg[@]}" "${deb_pkg[@]}"
+        apt-get update
+        apt-get install -y "${pkg[@]}" "${deb_pkg[@]}"
 
     elif command -v dnf >/dev/null 2>&1; then
         dnf install -y "${pkg[@]}" "${extra_pkg[@]}"
