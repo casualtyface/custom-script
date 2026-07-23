@@ -43,10 +43,6 @@ alias cd.fish='cd ~/.config/fish/'
 # Vim Config Aliases
 alias v.fish='vim ~/.config/fish/config.fish'
 alias v.grub='vim /etc/default/grub'
-alias v.awesome='vim ~/.config/awesome/rc.lua'
-alias v.fish='vim ~/.config/fish/config.fish'
-alias v.grub='vim /etc/default/grub'
-
 
 # Get the error messages from journalctl
 alias jctl='journalctl -p 3 -xb'
