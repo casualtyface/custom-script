@@ -19,23 +19,23 @@ deb_pkg=(
 
 install_packages() {
     if command -v apt >/dev/null 2>&1; then
-        sudo apt update
-        sudo apt install -y "${pkg[@]}" "${deb_pkg[@]}"
+        apt update
+        apt install -y "${pkg[@]}" "${deb_pkg[@]}"
 
     elif command -v dnf >/dev/null 2>&1; then
-        sudo dnf install -y "${pkg[@]}" "${extra_pkg[@]}"
+        dnf install -y "${pkg[@]}" "${extra_pkg[@]}"
 
     elif command -v pacman >/dev/null 2>&1; then
-        sudo pacman -Sy --needed "${pkg[@]}" "${extra_pkg[@]}"
+        pacman -Sy --needed "${pkg[@]}" "${extra_pkg[@]}"
 
     elif command -v zypper >/dev/null 2>&1; then
-        sudo zypper install -y "${pkg[@]}" "${extra_pkg[@]}"
+        zypper install -y "${pkg[@]}" "${extra_pkg[@]}"
 
     elif command -v apk >/dev/null 2>&1; then
-        sudo apk add "${pkg[@]}" "${extra_pkg[@]}"
+        apk add "${pkg[@]}" "${extra_pkg[@]}"
 
     elif command -v brew >/dev/null 2>&1; then
-        brew install "${pkg[@]}" "${extra_pkg[@]}"
+        install "${pkg[@]}" "${extra_pkg[@]}"
 
     else
         echo "Unsupported package manager."
